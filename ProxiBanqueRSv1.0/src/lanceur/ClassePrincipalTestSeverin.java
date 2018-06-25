@@ -1,6 +1,7 @@
 package lanceur;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import domaine.Agence;
 import domaine.Client;
@@ -98,9 +99,60 @@ public class ClassePrincipalTestSeverin {
 		client8.setCompteEpargne(compteEpargne8);		
 		client8.setCompteCourant(compteCourant9);	
 		
+
+		// VARIABLES DE TRAVAIL
+		char reponse;
+		Scanner sc = new Scanner(System.in);
+
+		// BOUCLE PRINCIPALE
+		do {
+			System.out.println("Bienvenue sur ProxyBank SI, conseiller clientele 'Matricule A'!");
+			System.out.println("Cher conseiller clientèle, entrez un choix");
+			System.out.println("1 -> afficher tous les clients");
+			System.out.println("2 -> ajouter un client à votre carnet de client");
+			System.out.println("Et bientôt...");
+			System.out.println("3 -> afficher tous les comptes");
+			System.out.println("4 -> afficher tous les clients");
+			System.out.println("5 -> effectuer un virement entre deux comptes");
+			System.out.println("6 -> afficher la liste des comptes à découvert");
+			System.out.println("7 -> faire une simulation de crédit");
+			System.out.println("8 -> afficher la liste des clients fortunés");
+			reponse = sc.nextLine().charAt(0);
+			System.out.println("Vous avez fait le choix numéro : " + reponse);
+
+			// 1 -> afficher tous les clients
+			if (reponse == '1') {
+				
+				for (Client client : conseillerA.getCarnetClient()) {
+					
+					System.out.print("Identifiant " + client.getIdClient() + ", ");
+					
+					if (client.getClass().equals(ClientParticulier.class)) {
+						System.out.print(((ClientParticulier)client).getNom());
+						System.out.println(", Particulier");
+					} else {
+						System.out.print(((ClientEntreprise)client).getNomEntreprise());
+						System.out.println(", Entreprise");
+					}
+
+				}
+				
+			}
+			
+			
+			do {
+				System.out.println("Voulez-vous faire un autre choix ? (O/N)");
+				reponse = sc.nextLine().charAt(0);
+			} while (reponse != 'O' && reponse != 'N');
+
+		} while (reponse == 'O');
+		System.out.println("Au revoir !");		
+				
+				
+
+		
 	}
 	
-	// Le conseiller clientele ajoute un client
 	
 
 }

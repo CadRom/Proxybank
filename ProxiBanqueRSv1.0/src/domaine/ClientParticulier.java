@@ -2,6 +2,12 @@ package domaine;
 
 import java.util.ArrayList;
 
+/**
+ * Cette classe decrit les caracteristiques
+ * d'un client, particulier = personne physique
+ * @author Adminl
+ * @version 0.1
+ */
 public class ClientParticulier extends Client {
 
 	private String numeroSecu;

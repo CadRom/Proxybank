@@ -1,5 +1,11 @@
 package domaine;
 
+/**
+ * Cette classe decrit les caracteristiques
+ * d'un placement
+ * @author Adminl
+ * @version 0.1
+ */
 public class Placement {
 
 	private String nom;

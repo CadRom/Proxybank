@@ -2,6 +2,13 @@ package domaine;
 
 import java.util.ArrayList;
 
+/**
+ * Cette classe decrit les caracteristiques
+ * d'une Agence
+ * @author Adminl
+ * @version 0.1
+ */
+
 public class Agence {
 
 	// PROPRIETES
@@ -59,6 +66,20 @@ public class Agence {
 	
 	// METHODES METIERS
 
+	
+	/**
+	 * Cette methode permet d'effectuer un audit
+	 * des clients deses carnets de client
+	 * de tous les conseiller clientele
+	 * de cette agence
+	 * 
+	 * Elle ne prend aucun parametre : ce n'est pas
+	 * nécessaire puisqu'il est appelee a partir d'un objet
+	 * Conseiller, et que sa propriete CarnetClient nous suffit
+	 * pour lister les clients, puis leurs comptes, et ainsi
+	 * d'afficher les comptes qui sont en dessous de zéro.
+	 *    
+	 */
 	public void faireAudit() {
 			// TODO Auto-generated constructor stub
 			

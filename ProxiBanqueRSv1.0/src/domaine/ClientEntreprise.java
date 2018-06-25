@@ -1,5 +1,15 @@
 package domaine;
 
+/**
+ * Cette classe decrit les caracteristiques
+ * d'une Client Entreprise
+ * 
+ * Il ne peut pas avoir de compte epargne
+ * ni de placement
+ * 
+ * @author Adminl
+ * @version 0.1
+ */
 public class ClientEntreprise extends Client {
 
 	private String numeroSiret;

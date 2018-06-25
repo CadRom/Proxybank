@@ -1,5 +1,11 @@
 package domaine;
 
+/**
+ * Cette classe decrit les caracteristiques
+ * d'un compte bancaire, soit courant, soir epargne
+ * @author Adminl
+ * @version 0.1
+ */
 public class CompteBancaire {
 	protected String numeroDeCompte;
 	protected double solde;

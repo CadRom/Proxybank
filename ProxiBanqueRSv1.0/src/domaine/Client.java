@@ -1,5 +1,11 @@
 package domaine;
 
+/**
+ * Cette classe decrit les caracteristiques
+ * d'un client
+ * @author Adminl
+ * @version 0.1
+ */
 public class Client {
 
 protected int idClient;
