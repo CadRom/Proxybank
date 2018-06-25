@@ -7,10 +7,9 @@ protected double soldeTotal;
 
 // CONSTRUCTEUR
 
-public Client(int idClient, double solde) {
+public Client(int idClient) {
 	super();
 	this.idClient = idClient;
-	this.soldeTotal = solde;
 }
 
 public Client() {

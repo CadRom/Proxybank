@@ -18,14 +18,14 @@ public class ClientParticulier extends Client {
 	
 	// CONSTRUCTEURS
 	
-	public ClientParticulier(String numeroSecu, String nom, String prenom, String adresse, int codePostal, String ville, String telephone, int idClient, double solde) {
-		super( idClient, solde);
+	public ClientParticulier(int idClient, String numeroSecu, String nom, String prenom, String adresse, int codePostal, String ville, String telephone) {
+		super(idClient);
 		this.numeroSecu=numeroSecu; this.nom= nom; this.prenom = prenom; this.adresse =adresse; this.codePostal= codePostal; this.ville =ville; this.telephone = telephone;
 	}
 	public ClientParticulier() {
-		super( 777, 777);
-		this.numeroSecu="777"; this.nom= "Raspoutine"; this.prenom = "charmant"; this.adresse ="Siberie"; this.codePostal= 99999; this.ville ="Kruchnikov"; this.telephone = "RaRaRaspoutineLoverOfTheRussianQueen";
+		super();
 	}
+
 // ASCESSEURS
 	public String getNumeroSecu() {
 		return numeroSecu;
