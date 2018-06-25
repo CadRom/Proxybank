@@ -4,30 +4,26 @@ import java.util.Set;
 
 public class Agence {
 
-	// 1. proprietes de Agence
+	// PROPRIETES
 	
 	private String numeroIdentification;
 	private String dateCreation;
 	private String nomGerant;
 	private Set<Conseiller> carnetConseiller;
 	
-	// 2. methodes de Agence
+	// CONSTRUCTEURS
 	
-	// 2.1 constructeurs
-	
-	// constructeurs vide
 	public Agence() {
 		super();
 	}
 
-	// constructeur avec ID et date
 	public Agence(String numeroIdentification, String dateCreation) {
 		super();
 		this.numeroIdentification = numeroIdentification;
 		this.dateCreation = dateCreation;
 	}
 
-	// getters et setters
+	// ASCESSEURS
 	
 	public String getNumeroIdentification() {
 		return numeroIdentification;
@@ -61,26 +57,25 @@ public class Agence {
 		this.carnetConseiller = carnetConseiller;
 	}
 	
-	// 2.2 methodes metiers
-	
-	// methode audit agence
-	// on liste d'abord les conseillers, ce qui nous permet de lister les clients
+	// METHODES METIERS
+
 	public void auditAgence() {
-		System.out.println("L'audit de l'agence va commencer");
-		System.out.println(this.numeroIdentification);
-		System.out.println(this.dateCreation);
-		System.out.println(this.nomGerant);
-		
-		for (Conseiller cons : carnetConseiller) {
-			
-			// TODO lister tous les clients vraiment trop dans le rouge
-			System.out.println(cons.getMatricule());
-			
-			// TODO bloucle à l'interieur de CarnetClient
-			// Set<Client> carnetClient = cons.getMatricule().getCarnetClient
-			
-			
-		}
+// methode audit agence
+// on liste d'abord les conseillers, ce qui nous permet de lister les clients
+//		System.out.println("L'audit de l'agence va commencer");
+//		System.out.println(this.numeroIdentification);
+//		System.out.println(this.dateCreation);
+//		System.out.println(this.nomGerant);
+//		
+//		for (Conseiller cons : carnetConseiller) {
+//			
+//			// TODO lister tous les clients vraiment trop dans le rouge
+//			System.out.println(cons.getMatricule());
+//			
+//			// TODO bloucle à l'interieur de CarnetClient
+//			// Set<Client> carnetClient = cons.getMatricule().getCarnetClient
+//			
+//	}
 		
 	}
 }

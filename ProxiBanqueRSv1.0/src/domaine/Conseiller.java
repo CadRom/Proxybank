@@ -1,7 +1,6 @@
 package domaine;
 
 import java.util.Set;
-import java.util.Scanner;
 
 
 public class Conseiller {
