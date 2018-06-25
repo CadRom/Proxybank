@@ -21,6 +21,16 @@ public class CompteBancaire {
 		this.tauxRemuneration = tauxRemuneration;
 		this.carte = carte;
 	}
+	
+	public CompteBancaire(String numeroDeCompte, double solde, String dateOuverture, double autorisationDecouvert,
+			double tauxRemuneration) {
+		super();
+		this.numeroDeCompte = numeroDeCompte;
+		this.solde = solde;
+		this.dateOuverture = dateOuverture;
+		this.autorisationDecouvert = autorisationDecouvert;
+		this.tauxRemuneration = tauxRemuneration;
+	}
 
 
 	// ASCESSEURS ...

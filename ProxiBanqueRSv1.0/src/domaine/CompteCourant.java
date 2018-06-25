@@ -20,10 +20,14 @@ public class CompteCourant extends CompteBancaire {
 
 	public CompteCourant(String numeroDeCompte, double solde, String dateOuverture, String carte) {
 		super(numeroDeCompte, solde, dateOuverture, 1000, 0, carte);
-
-		// TODO Auto-generated constructor stub
 	}
+		
+	public CompteCourant(String numeroDeCompte, double solde, String dateOuverture) {
+		super(numeroDeCompte, solde, dateOuverture, 1000, 0);
+	}
+
 	public CompteCourant() {
 		super("777", 5000, "un jour de pluie", 1000, 0, "Visa Electron");
-}
+	}
+	
 }
