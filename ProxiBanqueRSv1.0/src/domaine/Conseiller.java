@@ -2,7 +2,6 @@ package domaine;
 
 import java.util.Set;
 
-
 public class Conseiller {
 
 	// PROPRIETES
