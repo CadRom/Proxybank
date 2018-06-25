@@ -29,11 +29,12 @@ public class Conseiller {
 	public void IHMcreerClient() {
 		
 		// CLIENT ENTREPRISE OU PRIVE
-		
+		char reponse;
 		Scanner scn= new Scanner(System.in);
-		System.out.println("Client");
+		System.out.println("Le client est [P]artiiculier ou une [E]ntreprise?");
+		reponse = scn.nextLine().charAt(0);
 		
-		
+		if reponse = "P"
 		Client newClt = Client();  
 		Scanner scn= new Scanner(System.in);
 		System.out.println("Client");
