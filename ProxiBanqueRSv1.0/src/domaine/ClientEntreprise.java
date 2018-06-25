@@ -11,13 +11,13 @@ public class ClientEntreprise extends Client {
 	
 	// CONSTRUCTEUR
 	public ClientEntreprise(int idClient, double solde, String monNumeroSiret, String monNomEntreprise) {
-		super(idClient, solde);
+		super(idClient);
 		this.numeroSiret=monNumeroSiret;
 		this.nomEntreprise=monNomEntreprise;
 		
 	}
 	public ClientEntreprise() {
-		super(777, 777);
+		super(777);
 		
 		String monNumeroSiret ="777";
 		String monNomEntreprise = "777";

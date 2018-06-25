@@ -1,5 +1,7 @@
 package domaine;
 
+import java.util.ArrayList;
+
 public class ClientParticulier extends Client {
 
 	private String numeroSecu;
@@ -11,19 +13,19 @@ public class ClientParticulier extends Client {
 	private String telephone;
 	
 	
-	private Placement placement;
+    private ArrayList<Placement> listPlacement = new ArrayList<Placement>();
 	private CompteCourant compteCourant;
 	private CompteEpargne compteEpargne;
 	
 	
 	// CONSTRUCTEURS
 	
-	public ClientParticulier(String numeroSecu, String nom, String prenom, String adresse, int codePostal, String ville, String telephone, int idClient, double solde) {
-		super( idClient, solde);
+	public ClientParticulier(String numeroSecu, String nom, String prenom, String adresse, int codePostal, String ville, String telephone, int idClient) {
+		super( idClient);
 		this.numeroSecu=numeroSecu; this.nom= nom; this.prenom = prenom; this.adresse =adresse; this.codePostal= codePostal; this.ville =ville; this.telephone = telephone;
 	}
 	public ClientParticulier() {
-		super( 777, 777);
+		super( 777);
 		this.numeroSecu="777"; this.nom= "Raspoutine"; this.prenom = "charmant"; this.adresse ="Siberie"; this.codePostal= 99999; this.ville ="Kruchnikov"; this.telephone = "RaRaRaspoutineLoverOfTheRussianQueen";
 	}
 // ASCESSEURS
@@ -42,11 +44,12 @@ public class ClientParticulier extends Client {
 	}
 
 
-	public Placement getPlacement() {
-		return placement;
+
+	public ArrayList<Placement> getListPlacement() {
+		return listPlacement;
 	}
-	public void setPlacement(Placement placement) {
-		this.placement = placement;
+	public void setListPlacement(ArrayList<Placement> listPlacement) {
+		this.listPlacement = listPlacement;
 	}
 	public CompteCourant getCompteCourant() {
 		return compteCourant;
@@ -113,7 +116,7 @@ public class ClientParticulier extends Client {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-
+	
 	
 	
 }
