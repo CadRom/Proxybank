@@ -1,6 +1,6 @@
 package domaine;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Agence {
 
@@ -9,7 +9,7 @@ public class Agence {
 	private String numeroIdentification;
 	private String dateCreation;
 	private String nomGerant;
-	private Set<Conseiller> carnetConseiller;
+	private ArrayList<Conseiller> carnetConseiller;
 	
 	// CONSTRUCTEURS
 	
@@ -49,11 +49,11 @@ public class Agence {
 		this.nomGerant = nomGerant;
 	}
 
-	public Set<Conseiller> getCarnetConseiller() {
+	public ArrayList<Conseiller> getCarnetConseiller() {
 		return carnetConseiller;
 	}
 
-	public void setCarnetConseiller(Set<Conseiller> carnetConseiller) {
+	public void setCarnetConseiller(ArrayList<Conseiller> carnetConseiller) {
 		this.carnetConseiller = carnetConseiller;
 	}
 	

@@ -1,13 +1,13 @@
 package domaine;
 
-import java.util.Set;
+import java.util.ArrayList;
 
 public class Conseiller {
 
 	// PROPRIETES
 	
 	private String matricule;
-	private Set<Client> carnetClient;
+	private ArrayList<Client> carnetClient;
 
 	// CONSTRUCTEURS
 			
@@ -20,7 +20,7 @@ public class Conseiller {
 		this.matricule = matricule;
 	}
 	
-	public Conseiller(String matricule, Set<Client> carnetClient) {
+	public Conseiller(String matricule, ArrayList<Client> carnetClient) {
 		super();
 		this.matricule = matricule;
 		this.carnetClient = carnetClient;
@@ -36,11 +36,11 @@ public class Conseiller {
 		this.matricule = matricule;
 	}
 
-	public Set<Client> getCarnetClient() {
+	public ArrayList<Client> getCarnetClient() {
 		return carnetClient;
 	}
 
-	public void setCarnetClient(Set<Client> carnetClient) {
+	public void setCarnetClient(ArrayList<Client> carnetClient) {
 		this.carnetClient = carnetClient;
 	}
 		
