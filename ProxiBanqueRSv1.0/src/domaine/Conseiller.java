@@ -58,7 +58,7 @@ public class Conseiller {
 
 		System.out.println("Client");
 		}
-	if (reponse == 'P') {
+	/* if (reponse == 'P') {
 			
 		// le cliente st un particulier
 		
@@ -90,7 +90,7 @@ public class Conseiller {
 
 		System.out.println("Client");
 		}
-	
+	*/
 	
 		scn.close();
 	}

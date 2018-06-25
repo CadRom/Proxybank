@@ -23,5 +23,7 @@ public class CompteCourant extends CompteBancaire {
 
 		// TODO Auto-generated constructor stub
 	}
-
+	public CompteCourant() {
+		super("777", 5000, "un jour de pluie", 1000, 0, "Visa Electron");
+}
 }

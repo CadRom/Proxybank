@@ -23,4 +23,8 @@ public class CompteEpargne extends CompteBancaire {
 		// TODO Auto-generated constructor stub
 	}
 
+	public CompteEpargne() {
+		super("1123456", 10000, "un jour bleu", 0, 0.03, "non");
+		// TODO Auto-generated constructor stub
+	}
 }
