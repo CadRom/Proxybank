@@ -14,7 +14,7 @@ public class ClassePrincipale {
 		
 		// ClientParticulier clientP1 = new ClientParticulier();
 		
-		
+
 		
 
 	}
