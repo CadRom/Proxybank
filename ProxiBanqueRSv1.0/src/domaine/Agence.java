@@ -13,7 +13,9 @@ public class Agence {
 	
 	// 2. methodes de Agence
 	
-	// constructeur vide
+	// 2.1 constructeurs
+	
+	// constructeurs vide
 	public Agence() {
 		super();
 	}
@@ -59,8 +61,10 @@ public class Agence {
 		this.carnetConseiller = carnetConseiller;
 	}
 	
-	// methodes metiers
+	// 2.2 methodes metiers
 	
+	// methode audit agence
+	// on liste d'abord les conseillers, ce qui nous permet de lister les clients
 	public void auditAgence() {
 		System.out.println("L'audit de l'agence va commencer");
 		System.out.println(this.numeroIdentification);

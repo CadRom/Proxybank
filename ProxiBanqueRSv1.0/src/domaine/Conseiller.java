@@ -1,97 +1,117 @@
 package domaine;
 
-import java.util.ArrayList;
+import java.util.Set;
 import java.util.Scanner;
 
 
 public class Conseiller {
 
+	// PROPRIETES
+	
 	private String matricule;
-	private ArrayList<Client> List = new ArrayList<Client>();
+	private Set<Client> carnetClient;
+
+	// CONSTRUCTEURS
+			
+	public Conseiller() {
+		super();
+	}
+	
+	public Conseiller(String matricule) {
+		super();
+		this.matricule = matricule;
+	}
+	
+	public Conseiller(String matricule, Set<Client> carnetClient) {
+		super();
+		this.matricule = matricule;
+		this.carnetClient = carnetClient;
+	}
+
+	// ASCESSEURS
+	
 	public String getMatricule() {
 		return matricule;
 	}
+
 	public void setMatricule(String matricule) {
 		this.matricule = matricule;
 	}
-	public ArrayList<Client> getList() {
-		return List;
+
+	public Set<Client> getCarnetClient() {
+		return carnetClient;
 	}
-	public void setList(ArrayList<Client> list) {
-		List = list;
+
+	public void setCarnetClient(Set<Client> carnetClient) {
+		this.carnetClient = carnetClient;
 	}
-	public Conseiller(String matricule, ArrayList<Client> list) {
-		super();
-		this.matricule = matricule;
-		List = list;
-	}
+		
+	// METHODES METIERS (ET PEUT ETRE METHODE IHM AUSSI)
+	// 2.3 methode metiers et IHM
 	
 	public void IHMcreerClient() {
 		
 		// CLIENT ENTREPRISE OU PRIVE
-		char reponse;
-		Scanner scn= new Scanner(System.in);
-		System.out.println("Le client est [P]artiiculier ou une [E]ntreprise?");
-		reponse = scn.nextLine().charAt(0);
-		
-		if (reponse == 'E') {
-			
-			//le client est une entreprise
-			
-			
-			int idClient;
-			double solde;
-			String monNumeroSiret;
-			String monNomEntreprise;
-			
-			System.out.println("ID du Client?");
-			idClient=scn.nextInt();
-			System.out.println("Nom de l'entreprise?");
-			monNomEntreprise=scn.nextLine();
-			System.out.println("Numero Siret de l'entreprise?");
-			monNumeroSiret=scn.nextLine();
-			System.out.println("Nom de l'entreprise?");
-			solde=scn.nextDouble();
-			
-			List.add( new ClientEntreprise(idClient, solde, monNumeroSiret, monNomEntreprise));
-			
-
-		System.out.println("Client");
-		}
-	if (reponse == 'P') {
+//		char reponse;
+//		Scanner scn= new Scanner(System.in);
+//		System.out.println("Le client est [P]articulier ou une [E]ntreprise?");
+//		reponse = scn.nextLine().charAt(0);
+//		
+//		if (reponse == 'E') {
+//			
+//			//le client est une entreprise	
+//			int idClient;
+//			double solde;
+//			String monNumeroSiret;
+//			String monNomEntreprise;
+//			
+//			System.out.println("ID du Client?");
+//			idClient=scn.nextInt();
+//			System.out.println("Nom de l'entreprise?");
+//			monNomEntreprise=scn.nextLine();
+//			System.out.println("Numero Siret de l'entreprise?");
+//			monNumeroSiret=scn.nextLine();
+//			System.out.println("Nom de l'entreprise?");
+//			solde=scn.nextDouble();
+//			
+//			this.carnetClient.add( new ClientEntreprise(idClient, solde, monNumeroSiret, monNomEntreprise));
+//			
+//
+//		System.out.println("Client");
+//		}
+//	if (reponse == 'P') {
 			
 		// le cliente st un particulier
 		
 		
-			int idClient;
-			double solde;
-			private String numeroSecu;
-			private String nom;
-			private String prenom;
-			private String adresse;
-			private int codePostal;
-			private String ville;
-			private String telephone;
-			
-			System.out.println("ID du Client?");
-			numeroSecu=scn.nextInt();
-			System.out.println("Nom de l'entreprise?");
-			nom=scn.nextLine();
-			System.out.println("Nom de l'entreprise?");
-			prenom=scn.nextLine();
-			
-			System.out.println("Numero Siret de l'entreprise?");
-			monNumeroSiret=scn.nextLine();
-			System.out.println("Nom de l'entreprise?");
-			solde=scn.nextDouble();
-			
-			List.add( new ClientEntreprise(idClient, solde, monNumeroSiret, monNomEntreprise));
-			
-
-		System.out.println("Client");
-		}
-	
-	
-		scn.close();
+//			int idClient;
+//			double solde;
+//			int numeroSecu;
+//			String nom;
+//			String prenom;
+//			String adresse;
+//			int codePostal;
+//			String ville;
+//			String telephone;
+//			
+//			System.out.println("ID du Client?");
+//			numeroSecu=scn.nextInt();
+//			System.out.println("Nom de l'entreprise?");
+//			nom=scn.nextLine();
+//			System.out.println("Nom de l'entreprise?");
+//			prenom=scn.nextLine();
+//			
+//		//	List.add( new ClientParticulier(idClient, solde, numeroSecu, nom, prenom));
+//			
+//
+//		System.out.println("Client");
+//		}
+//	
+//	
+//		scn.close();
 	}
+
+
+
+
 }
