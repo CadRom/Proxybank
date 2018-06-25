@@ -104,7 +104,54 @@ public class Conseiller {
 //		scn.close();
 
 	}
+	
+	// FAIRE UN PLACEMENT POUR UN CLIENT FORTUNE
+	
+	
+	public void FairePlacement(ClientParticulier clt, double montant, String nomPlacement) {
+		// TODO Auto-generated constructor stub
+		double soldeTotal = (clt.getCompteCourant().getSolde()+clt.getCompteEpargne().getSolde());
+		if (soldeTotal < 50000 ) {
+			System.out.println("Le client n'est pas éligible pour faire des placements. Son solde (epargne+compte courant) est insuffisant");
+			
+		}
+		else {
 
+			if ( (clt.getCompteEpargne().getSolde() + clt.getCompteEpargne().getAutorisationDecouvert()) > montant ) {
+				ArrayList<Placement> listTampon= new ArrayList<Placement>(); 
+				listTampon=clt.getListPlacement();
+				listTampon.add (new Placement(nomPlacement,montant));
+				clt.setListPlacement(listTampon);
+				double soldeTampon;
+				soldeTampon=clt.getCompteEpargne().getSolde();
+				clt.getCompteEpargne().setSolde(soldeTampon- montant);
+				
+				
+		}
+			else { System.out.println("Le solde du compte Epargne du client est trop bas pour permettre ce montant de placement"); }
+	}
+			
+	
+		}
+
+
+		public void VirementCaC(CompteBancaire cptDeb, CompteBancaire cptCred, double montant) {
+			
+			/**
+			 * On controle la legitimité de la transaction
+			 *
+			 */
+			double control;
+			control = cptDeb.getSolde()+cptDeb.getAutorisationDecouvert();
+			if (control >= montant) {
+				
+			double newS1 = cptCred.getSolde()-montant; cptCred.setSolde(newS1);
+			double newS2 = cptCred.getSolde()+montant; cptCred.setSolde(newS2);
+			}
+		}
+
+
+	
 public void AuditClients() {
 	
 	// POUR CHAQUE CLIENT ON VA AFFICHER LE NOM ET LE SOLDE DES COMPTES ET UN MESSAGE SI LE COPMPTE EST AU ROUGE
@@ -118,22 +165,22 @@ public void AuditClients() {
 			System.out.println("client: "+cltp.getNom()+" "+cltp.getPrenom());
 			System.out.println("Solde Epargne Client : "+cltp.getCompteEpargne().getSolde());
 			System.out.println("Solde Courant Client : "+cltp.getCompteCourant().getSolde());
+			
 			// on regarde si le compte est au rouge
-			if (cltp.getCompteCourant().getSolde()+cltp.getCompteEpargne().getSolde()<5000) {
+			if (cltp.getCompteCourant().getSolde()+cltp.getCompteEpargne().getSolde()< -5000) {
 				System.out.println("LE CLIENT "+ cltp.getIdClient() + " du nom de "+cltp.getNom()+" "+cltp.getPrenom() + " EST DEBITEUR DE PLUS DE 5000 EUROS");
 			}
 		}
 		else if (clt.getClass().equals(ClientEntreprise.class)) {
 			ClientEntreprise clte = (ClientEntreprise) clt;
-			System.out.println("client: "+clte.getNomEntreprise() + " numero");
-			System.out.println("Solde Epargne Client : "+cltp.getCompteEpargne().getSolde());
-			System.out.println("Solde Courant Client : "+cltp.getCompteCourant().getSolde());
+			System.out.println("client: "+clte.getNomEntreprise() + " numero siret " + clte.getNumeroSiret());
+			System.out.println("Solde Courant Client : "+clte.getCompteCourant().getSolde());
 			// on regarde si le compte est au rouge
-			if (clte.getCompteCourant().getSolde()+cltp.getCompteEpargne().getSolde()<5000) {
-				System.out.println("LE CLIENT "+ cltp.getIdClient() + " du nom de "+cltp.getNom()+" "+cltp.getPrenom() + " EST DEBITEUR DE PLUS DE 5000 EUROS");
+			if (clte.getCompteCourant().getSolde()< -50000) {
+				System.out.println("LE CLIENT "+ clte.getIdClient() + " du nom de "+clte.getNomEntreprise()  + " EST DEBITEUR DE PLUS DE 50 000 EUROS");
 			
 		}
-		
+		}
 		
 		
 	}

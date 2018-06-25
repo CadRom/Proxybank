@@ -59,23 +59,12 @@ public class Agence {
 	
 	// METHODES METIERS
 
-	public void auditAgence() {
-// methode audit agence
-// on liste d'abord les conseillers, ce qui nous permet de lister les clients
-//		System.out.println("L'audit de l'agence va commencer");
-//		System.out.println(this.numeroIdentification);
-//		System.out.println(this.dateCreation);
-//		System.out.println(this.nomGerant);
-//		
-//		for (Conseiller cons : carnetConseiller) {
-//			
-//			// TODO lister tous les clients vraiment trop dans le rouge
-//			System.out.println(cons.getMatricule());
-//			
-//			// TODO bloucle à l'interieur de CarnetClient
-//			// Set<Client> carnetClient = cons.getMatricule().getCarnetClient
-//			
-//	}
-		
+	public void faireAudit() {
+			// TODO Auto-generated constructor stub
+			
+			for (Conseiller csl : this.getCarnetConseiller()) {
+				csl.AuditClients();
+			}
+		}
 	}
-}
+

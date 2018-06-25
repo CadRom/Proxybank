@@ -7,7 +7,7 @@ public class FaireAudit {
 		// TODO Auto-generated constructor stub
 		
 		for (Conseiller csl : agc.getCarnetConseiller()) {
-			
+			csl.AuditClients();
 		}
 	}
 
