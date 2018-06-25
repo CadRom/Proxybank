@@ -36,6 +36,9 @@ public class Conseiller {
 		
 		if (reponse == 'E') {
 			
+			//le client est une entreprise
+			
+			
 			int idClient;
 			double solde;
 			String monNumeroSiret;
@@ -49,13 +52,46 @@ public class Conseiller {
 			monNumeroSiret=scn.nextLine();
 			System.out.println("Nom de l'entreprise?");
 			solde=scn.nextDouble();
-			//iebhubgui 
+			
 			List.add( new ClientEntreprise(idClient, solde, monNumeroSiret, monNomEntreprise));
 			
 
 		System.out.println("Client");
 		}
+	if (reponse == 'P') {
+			
+		// le cliente st un particulier
 		
 		
+			int idClient;
+			double solde;
+			private String numeroSecu;
+			private String nom;
+			private String prenom;
+			private String adresse;
+			private int codePostal;
+			private String ville;
+			private String telephone;
+			
+			System.out.println("ID du Client?");
+			numeroSecu=scn.nextInt();
+			System.out.println("Nom de l'entreprise?");
+			nom=scn.nextLine();
+			System.out.println("Nom de l'entreprise?");
+			prenom=scn.nextLine();
+			
+			System.out.println("Numero Siret de l'entreprise?");
+			monNumeroSiret=scn.nextLine();
+			System.out.println("Nom de l'entreprise?");
+			solde=scn.nextDouble();
+			
+			List.add( new ClientEntreprise(idClient, solde, monNumeroSiret, monNomEntreprise));
+			
+
+		System.out.println("Client");
+		}
+	
+	
+		scn.close();
 	}
 }
