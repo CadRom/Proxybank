@@ -102,6 +102,7 @@ public class ClassePrincipalTestSeverin {
 
 		// VARIABLES DE TRAVAIL
 		char reponse;
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 
 		// BOUCLE PRINCIPALE

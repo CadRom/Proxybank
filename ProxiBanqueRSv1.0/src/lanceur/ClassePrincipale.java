@@ -113,6 +113,9 @@ public class ClassePrincipale {
 
 		char reponse;
 		Scanner scn = new Scanner(System.in);
+
+//		do {
+		
 		System.out.println("Etes vous le [G]erant ou un [C]onseiller?");
 		reponse = scn.nextLine().charAt(0);
 
@@ -126,7 +129,7 @@ public class ClassePrincipale {
 			if (reponse2 == 'A') {
 
 				String reponse3;
-				System.out.println("Vous etes le Gerant de Quelle agence? 377K ou 021J ?");
+				System.out.println("Vous etes le Gerant de Quelle agence? 377K ou 021J ? version stable sur 377K");
 				reponse3 = scn.nextLine();
 				if (reponse3.equals("377K")) {
 					// audit de l'agence 1
@@ -165,8 +168,8 @@ public class ClassePrincipale {
 				else if(reponse5.equals("V")){
 
 		System.out.println(" Demonstration de virement");
-		System.out.println("Solde du compte debiteur"+ client1.getCompteCourant().getSolde());
-		System.out.println("Solde du compte credité"+ client2.getCompteCourant().getSolde());
+		System.out.println("Solde du compte debiteur"+ client1.getCompteCourant().getSolde()+" proprietaire "+ client1.getNom());
+		System.out.println("Solde du compte credité"+ client2.getCompteCourant().getSolde()+" proprietaire "+ client2.getNom());
 		System.out.println("choisissez un montant à virer depuis le compte courant de "+ client1.getNom() + " " + client1.getPrenom() + " pour le compte courant de " + client2.getNom() + " " + client2.getPrenom());
 		Double reponse6 = scn.nextDouble();
 		
@@ -174,32 +177,42 @@ public class ClassePrincipale {
 		client1.getCompteCourant().setSolde(client1.getCompteCourant().getSolde()-reponse6);
 		client2.getCompteCourant().setSolde(client2.getCompteCourant().getSolde()+reponse6);
 		
-		System.out.println("Solde du compte debiteur"+ client1.getCompteCourant().getSolde());
-		System.out.println("Solde du compte credité"+ client2.getCompteCourant().getSolde());
+		System.out.println("Solde du compte debiteur"+ client1.getCompteCourant().getSolde()+" proprietaire "+ client1.getNom());
+		System.out.println("Solde du compte credité"+ client2.getCompteCourant().getSolde()+" proprietaire "+ client2.getNom());
 				}
 		
 				else if(reponse5.equals("P")) {
 					System.out.println(
-							"tentative de placement sur un client pas assez fortuné, montant par defaut 30 000 (euros) sur un placement GTM ");
+							"1. tentative de placement sur un client pas assez fortuné, montant par defaut 30 000 (euros) sur un placement GTM " +" proprietaire "+ client1.getNom());
 					conseillerA.FairePlacement(client1, 30000, "GTM");
 					
 				
 				System.out.println(
-						"Placement avec un client assez fortuné, montant par defaut 30 000 (euros) sur un placement GTM ");
+						"2. tentative de placement avec un client assez fortuné, montant par defaut 30 000 (euros) sur un placement GTM " +" proprietaire "+ client2.getNom());
 				conseillerA.FairePlacement(client2, 30000, "GTM");
+				System.out.println(
+						"Placement effectué "+client2.getListPlacement().get(0).getNom()+ " " +client2.getListPlacement().get(0).getMontant() );
 				}
 			
 			}
 		
 		
-		
-		
-		
+			
 		
 		
 		
 		}
 
+		
+//		do {
+//			System.out.println("Voulez-vous faire un autre choix ? (O/N)");
+//			reponse = scn.nextLine().charAt(0);
+//		} while (reponse != 'O' && reponse != 'N');
+//
+//		scn.nextLine();
+//	} while (reponse == 'O');
+//	System.out.println("Au revoir !");	
+		
 		scn.close();
 	}
 	}
