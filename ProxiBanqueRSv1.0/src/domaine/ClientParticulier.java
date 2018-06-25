@@ -1,5 +1,7 @@
 package domaine;
 
+import java.util.ArrayList;
+
 public class ClientParticulier extends Client {
 
 	private String numeroSecu;
@@ -11,7 +13,7 @@ public class ClientParticulier extends Client {
 	private String telephone;
 	
 	
-	private Placement placement;
+    private ArrayList<Placement> listPlacement = new ArrayList<Placement>();
 	private CompteCourant compteCourant;
 	private CompteEpargne compteEpargne;
 	
@@ -42,11 +44,12 @@ public class ClientParticulier extends Client {
 	}
 
 
-	public Placement getPlacement() {
-		return placement;
+
+	public ArrayList<Placement> getListPlacement() {
+		return listPlacement;
 	}
-	public void setPlacement(Placement placement) {
-		this.placement = placement;
+	public void setListPlacement(ArrayList<Placement> listPlacement) {
+		this.listPlacement = listPlacement;
 	}
 	public CompteCourant getCompteCourant() {
 		return compteCourant;
@@ -113,7 +116,7 @@ public class ClientParticulier extends Client {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-
+	
 	
 	
 }

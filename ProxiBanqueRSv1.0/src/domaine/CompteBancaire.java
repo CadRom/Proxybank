@@ -23,7 +23,7 @@ public class CompteBancaire {
 	}
 
 
-	// ASCESSEURS
+	// ASCESSEURS ...
 
 	public String getNumeroDeCompte() {
 		return numeroDeCompte;
