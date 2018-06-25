@@ -10,7 +10,7 @@ import domaine.ClientParticulier;
 import domaine.CompteCourant;
 import domaine.CompteEpargne;
 import domaine.Conseiller;
-import domaine.*;
+
 
 public class ClassePrincipale {
 
@@ -77,14 +77,14 @@ public class ClassePrincipale {
 
 		// COMPTES
 		CompteEpargne compteEpargne1 = new CompteEpargne("100J", 10000, "25/06/2018");
-		CompteEpargne compteEpargne2 = new CompteEpargne("101J", 0, "25/06/2018");
+		CompteEpargne compteEpargne2 = new CompteEpargne("101J", 500000, "25/06/2018");
 		CompteEpargne compteEpargne3 = new CompteEpargne("102J", 5000000, "25/06/2018");
 		CompteEpargne compteEpargne5 = new CompteEpargne("104J", 0, "25/06/2018");
 		CompteEpargne compteEpargne7 = new CompteEpargne("106J", -100000, "25/06/2018");
 		CompteEpargne compteEpargne8 = new CompteEpargne("107J", 0, "25/06/2018");
 
-		CompteCourant compteCourant1 = new CompteCourant("100J", 0, "25/06/2018");
-		CompteCourant compteCourant2 = new CompteCourant("101J", 0, "25/06/2018");
+		CompteCourant compteCourant1 = new CompteCourant("100J", 2000, "25/06/2018");
+		CompteCourant compteCourant2 = new CompteCourant("101J", 5000000, "25/06/2018");
 		CompteCourant compteCourant3 = new CompteCourant("102J", 200, "25/06/2018");
 		CompteCourant compteCourant4 = new CompteCourant("103J", 0, "25/06/2018");
 		CompteCourant compteCourant5 = new CompteCourant("104J", 0, "25/06/2018");
@@ -151,30 +151,45 @@ public class ClassePrincipale {
 		
 		if (reponse == 'C') {
 			String reponse4;
-			System.out.println("Quel conseiller? matriculeA? matriculeB? matriculeC? matriculeD?");
+			System.out.println("Quel conseiller? matriculeA? matriculeB? matriculeC? matriculeD? dans cette version seul matricule A est codé");
 			reponse4 = scn.nextLine();
 			
 			// MATRICULE A
 			if (reponse4.equals("matriculeA")) {
 				System.out.println(
 						"Voulez vous réaliser un [A]udit de vos client? ou faire un [V]irement compte à compte? ou [P]roposer un placement?");
-				char reponse5 = scn.nextLine().charAt(0);
-				if (reponse4.equals('A')) {
+				String reponse5 = scn.nextLine();
+				if (reponse5.equals("A")) {
 					conseillerA.AuditClients();
 				}
-				else if(reponse4.equals('V')){
-					
-				}
+				else if(reponse5.equals("V")){
 
+		System.out.println(" Demonstration de virement");
+		System.out.println("Solde du compte debiteur"+ client1.getCompteCourant().getSolde());
+		System.out.println("Solde du compte credité"+ client2.getCompteCourant().getSolde());
+		System.out.println("choisissez un montant à virer depuis le compte courant de "+ client1.getNom() + " " + client1.getPrenom() + " pour le compte courant de " + client2.getNom() + " " + client2.getPrenom());
+		Double reponse6 = scn.nextDouble();
+		
+		conseillerA.VirementCaC(client1.getCompteCourant(), client2.getCompteCourant(), reponse6);
+		client1.getCompteCourant().setSolde(client1.getCompteCourant().getSolde()-reponse6);
+		client2.getCompteCourant().setSolde(client2.getCompteCourant().getSolde()+reponse6);
+		
+		System.out.println("Solde du compte debiteur"+ client1.getCompteCourant().getSolde());
+		System.out.println("Solde du compte credité"+ client2.getCompteCourant().getSolde());
+				}
+		
+				else if(reponse5.equals("P")) {
+					System.out.println(
+							"tentative de placement sur un client pas assez fortuné, montant par defaut 30 000 (euros) sur un placement GTM ");
+					conseillerA.FairePlacement(client1, 30000, "GTM");
+					
+				
+				System.out.println(
+						"Placement avec un client assez fortuné, montant par defaut 30 000 (euros) sur un placement GTM ");
+				conseillerA.FairePlacement(client2, 30000, "GTM");
+				}
+			
 			}
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		
@@ -187,4 +202,4 @@ public class ClassePrincipale {
 
 		scn.close();
 	}
-}
+	}

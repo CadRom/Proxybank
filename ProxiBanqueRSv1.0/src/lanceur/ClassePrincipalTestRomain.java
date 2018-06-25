@@ -31,7 +31,7 @@ public class ClassePrincipalTestRomain {
 				System.out.println("mauvaise reponse");
 			}
 		}
-		
+		scn.close();
 	}
 
 }
