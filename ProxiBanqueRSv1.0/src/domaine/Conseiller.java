@@ -34,12 +34,28 @@ public class Conseiller {
 		System.out.println("Le client est [P]artiiculier ou une [E]ntreprise?");
 		reponse = scn.nextLine().charAt(0);
 		
-		if reponse = "P"
-		Client newClt = Client();  
-		Scanner scn= new Scanner(System.in);
+		if (reponse == 'E') {
+			
+			int idClient;
+			double solde;
+			String monNumeroSiret;
+			String monNomEntreprise;
+			
+			System.out.println("ID du Client?");
+			idClient=scn.nextInt();
+			System.out.println("Nom de l'entreprise?");
+			monNomEntreprise=scn.nextLine();
+			System.out.println("Numero Siret de l'entreprise?");
+			monNumeroSiret=scn.nextLine();
+			System.out.println("Nom de l'entreprise?");
+			solde=scn.nextDouble();
+			
+			List.add( new ClientEntreprise(idClient, solde, monNumeroSiret, monNomEntreprise));
+			
+
 		System.out.println("Client");
+		}
 		
 		
-		this.List.add(e)
 	}
 }
