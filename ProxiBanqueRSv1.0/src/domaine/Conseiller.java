@@ -47,7 +47,6 @@ public class Conseiller {
 	}
 		
 	// METHODES METIERS (ET PEUT ETRE METHODE IHM AUSSI)
-	// 2.3 methode metiers et IHM
 	
 	public void IHMcreerClient() {
 		
@@ -80,10 +79,6 @@ public class Conseiller {
 //		System.out.println("Client");
 //		}
 //	if (reponse == 'P') {
-			
-		// le cliente st un particulier
-		
-		
 //			int idClient;
 //			double solde;
 //			int numeroSecu;
@@ -109,6 +104,7 @@ public class Conseiller {
 //	
 //	
 //		scn.close();
+
 	}
 
 
