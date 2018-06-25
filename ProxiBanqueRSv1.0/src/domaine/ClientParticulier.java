@@ -16,7 +16,7 @@ public class ClientParticulier extends Client {
 	private CompteEpargne compteEpargne;
 	
 	
-	// CONSTRUCTEUR
+	// CONSTRUCTEURS
 	
 	public ClientParticulier(String numeroSecu, String nom, String prenom, String adresse, int codePostal, String ville, String telephone, int idClient, double solde) {
 		super( idClient, solde);
