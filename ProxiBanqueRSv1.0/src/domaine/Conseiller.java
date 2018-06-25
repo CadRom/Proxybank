@@ -49,7 +49,7 @@ public class Conseiller {
 			monNumeroSiret=scn.nextLine();
 			System.out.println("Nom de l'entreprise?");
 			solde=scn.nextDouble();
-			
+			//iebhubgui 
 			List.add( new ClientEntreprise(idClient, solde, monNumeroSiret, monNomEntreprise));
 			
 
