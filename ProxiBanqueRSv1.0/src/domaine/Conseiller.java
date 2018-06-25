@@ -105,7 +105,42 @@ public class Conseiller {
 
 	}
 
-
+public void AuditClients() {
+	
+	// POUR CHAQUE CLIENT ON VA AFFICHER LE NOM ET LE SOLDE DES COMPTES ET UN MESSAGE SI LE COPMPTE EST AU ROUGE
+	
+	for (Client clt : this.carnetClient) {
+		System.out.println("ID client: "+clt.getIdClient());
+		
+		if(clt.getClass().equals(ClientParticulier.class)) {
+			ClientParticulier cltp = (ClientParticulier) clt;
+			
+			System.out.println("client: "+cltp.getNom()+" "+cltp.getPrenom());
+			System.out.println("Solde Epargne Client : "+cltp.getCompteEpargne().getSolde());
+			System.out.println("Solde Courant Client : "+cltp.getCompteCourant().getSolde());
+			// on regarde si le compte est au rouge
+			if (cltp.getCompteCourant().getSolde()+cltp.getCompteEpargne().getSolde()<5000) {
+				System.out.println("LE CLIENT "+ cltp.getIdClient() + " du nom de "+cltp.getNom()+" "+cltp.getPrenom() + " EST DEBITEUR DE PLUS DE 5000 EUROS");
+			}
+		}
+		else if (clt.getClass().equals(ClientEntreprise.class)) {
+			ClientEntreprise clte = (ClientEntreprise) clt;
+			System.out.println("client: "+clte.getNomEntreprise() + " numero");
+			System.out.println("Solde Epargne Client : "+cltp.getCompteEpargne().getSolde());
+			System.out.println("Solde Courant Client : "+cltp.getCompteCourant().getSolde());
+			// on regarde si le compte est au rouge
+			if (clte.getCompteCourant().getSolde()+cltp.getCompteEpargne().getSolde()<5000) {
+				System.out.println("LE CLIENT "+ cltp.getIdClient() + " du nom de "+cltp.getNom()+" "+cltp.getPrenom() + " EST DEBITEUR DE PLUS DE 5000 EUROS");
+			
+		}
+		
+		
+		
+	}
+	
+	
+	
+}
 
 
 }
