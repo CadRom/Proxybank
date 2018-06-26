@@ -114,7 +114,7 @@ public class ClassePrincipale {
 		char reponse;
 		Scanner scn = new Scanner(System.in);
 
-//		do {
+		do {
 		
 		System.out.println("Etes vous le [G]erant ou un [C]onseiller?");
 		reponse = scn.nextLine().charAt(0);
@@ -172,6 +172,7 @@ public class ClassePrincipale {
 		System.out.println("Solde du compte credité"+ client2.getCompteCourant().getSolde()+" proprietaire "+ client2.getNom());
 		System.out.println("choisissez un montant à virer depuis le compte courant de "+ client1.getNom() + " " + client1.getPrenom() + " pour le compte courant de " + client2.getNom() + " " + client2.getPrenom());
 		Double reponse6 = scn.nextDouble();
+		scn.nextLine();
 		
 		conseillerA.VirementCaC(client1.getCompteCourant(), client2.getCompteCourant(), reponse6);
 		client1.getCompteCourant().setSolde(client1.getCompteCourant().getSolde()-reponse6);
@@ -204,14 +205,15 @@ public class ClassePrincipale {
 		}
 
 		
-//		do {
-//			System.out.println("Voulez-vous faire un autre choix ? (O/N)");
-//			reponse = scn.nextLine().charAt(0);
-//		} while (reponse != 'O' && reponse != 'N');
-//
-//		scn.nextLine();
-//	} while (reponse == 'O');
-//	System.out.println("Au revoir !");	
+		do {
+			System.out.println("Voulez-vous faire un autre choix ? (O/N)");
+			
+			reponse = scn.nextLine().charAt(0);
+		} while (reponse != 'O' && reponse != 'N');
+
+	} while (reponse == 'O');
+	
+	System.out.println("Au revoir !");	
 		
 		scn.close();
 	}
